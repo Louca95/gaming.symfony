@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des héros{% endblock %}
+
+{% block body %}
+<h1>Liste des Héros</h1>
+<ul>{% for hero in heroes %}
+        <li>
+        <img src="{{hero.image}}" alt="{{hero.alias}}" width="100">
+            <a href="{{path('hero_show',{alias:hero.alias})}}">
+            {{hero.nom}}</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}
